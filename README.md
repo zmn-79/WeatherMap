@@ -55,3 +55,6 @@ Map data (c) OpenStreetMap contributors. Geocoding by Nominatim (usage policy: m
 
 ## Known limitations
 The browser-only API key exposure above; Nominatim returns only the top match.
+
+## Optional features
+Share Weather (popup button) and Favorite cities (Save city in popup; chips above the map).
