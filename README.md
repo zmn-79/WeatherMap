@@ -10,6 +10,7 @@ Enter a place, and the app geocodes it, fetches current weather, flies the map t
 - Nominatim geocoding, then OpenWeatherMap Current Weather (chained `async/await` fetches)
 - Single replaceable marker, smooth `flyTo`, popup with name, temperature, condition, description, humidity, wind, clouds and official icon
 - Loading spinner and alert cards for empty input, unknown place, 401, 404, 429, network and malformed responses
+- **Click the map:** click anywhere to reverse-geocode (Nominatim `/reverse`) and get weather for that spot; clicks are ignored while a lookup is running to respect Nominatim's 1 request/second policy, and the current zoom is kept
 - **Extras:** Share Weather (Web Share API, clipboard fallback); favorite cities in `localStorage` (no duplicates, removable, re-run the full search when clicked)
 
 ## Technologies and APIs
