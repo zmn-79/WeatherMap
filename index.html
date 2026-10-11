@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>WeatherMap</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app">
+    <h1 class="app-title">WeatherMap</h1>
+
+    <form id="search-form" class="search-form" novalidate>
+      <label for="location-input" class="visually-hidden">City, address or place</label>
+      <input id="location-input" name="location" type="text" autocomplete="off" placeholder="Try Port Sudan, Riyadh or Cairo">
+      <button id="search-btn" type="submit">Get Weather</button>
+    </form>
+
+    <div id="status" class="status" role="status" aria-live="polite">
+      <div id="loader" class="loader" hidden><span class="spinner" aria-hidden="true"></span><span>Looking up weather…</span></div>
+      <div id="error-card" class="alert" role="alert" hidden></div>
+      <div id="empty-state" class="empty">Search for a place to see its current weather on the map.</div>
+    </div>
+
+    <section class="favorites" aria-label="Favorite cities">
+      <h2 class="favorites-title">Favorite cities</h2>
+      <ul id="favorites-list" class="favorites-list"></ul>
+    </section>
+
+    <div id="map" aria-label="Weather map"></div>
+
+    <footer class="credits">
+      Map data &copy; OpenStreetMap contributors · Geocoding by Nominatim · Weather by OpenWeatherMap · Map library Leaflet
+    </footer>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/config.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/geocoding.js"></script>
+  <script src="js/weather.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
