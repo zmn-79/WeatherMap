@@ -1,0 +1,54 @@
+:root {
+  --navy: #14213d; --ink: #1d2533; --muted: #5b6577; --paper: #f4f6fa; --card: #fff;
+  --accent: #1b6ca8; --accent-dark: #124e7c; --danger-bg: #fdecec; --danger: #9b1c1c; --line: #c3cad6;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Roboto", Arial, sans-serif; font-size: 16px; line-height: 1.5; color: var(--ink); background: var(--paper); }
+.app { max-width: 1100px; margin: 0 auto; padding: 1rem; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.app-title { font-size: 2rem; font-weight: 700; margin: 0 0 1rem; padding: .6rem 1rem; background: var(--card); border-radius: 10px; color: var(--navy); box-shadow: 0 3px 10px rgba(20, 33, 61, .18); }
+
+.search-form { display: flex; gap: .6rem; flex-wrap: wrap; }
+.search-form input { flex: 1 1 240px; min-height: 46px; padding: 0 1rem; font: inherit; color: var(--ink); background: var(--card); border: 2px solid var(--line); border-radius: 10px; appearance: none; transition: border-color .2s, box-shadow .2s; }
+.search-form input:hover { border-color: var(--accent); }
+.search-form input:focus-visible { outline: none; border-color: var(--accent-dark); box-shadow: 0 0 0 4px rgba(27, 108, 168, .3); }
+.search-form button { min-height: 46px; padding: 0 1.6rem; font: inherit; font-weight: 500; color: #fff; background: var(--accent); border: 2px solid var(--accent-dark); border-radius: 10px; cursor: pointer; appearance: none; transition: background .2s, transform .15s; }
+.search-form button:hover:not(:disabled) { background: var(--accent-dark); transform: translateY(-1px); }
+.search-form button:focus-visible, .fav-btn:focus-visible, .share-btn:focus-visible, .save-btn:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+.search-form button:disabled { opacity: .6; cursor: not-allowed; }
+
+.status { margin: .8rem 0; min-height: 3rem; }
+.loader { display: flex; align-items: center; gap: .7rem; padding: .7rem 1rem; background: var(--card); border-radius: 10px; border: 1px solid var(--line); }
+.loader[hidden], .alert[hidden], .empty[hidden] { display: none; }
+.spinner { width: 22px; height: 22px; border: 3px solid var(--line); border-top-color: var(--accent); border-radius: 50%; animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spinner { animation-duration: 2s; } * { transition: none !important; } }
+.alert { padding: .8rem 1rem; color: var(--danger); background: var(--danger-bg); border: 1px solid #e3a7a7; border-left: 6px solid var(--danger); border-radius: 10px; }
+.empty { color: var(--muted); padding: .7rem 0; }
+
+.favorites { margin-bottom: 1rem; }
+.favorites-title { font-size: 1rem; margin: 0 0 .4rem; }
+.favorites-list { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .5rem; }
+.favorites-empty { color: var(--muted); font-size: .9rem; }
+.fav-item { display: inline-flex; border: 2px solid var(--navy); border-radius: 999px; overflow: hidden; background: var(--card); }
+.fav-btn { font: inherit; font-size: .9rem; padding: .3rem .8rem; border: 0; background: transparent; color: var(--navy); cursor: pointer; transition: background .2s; }
+.fav-btn:hover { background: #e3eaf5; }
+.fav-remove { border-left: 1px solid var(--line); padding: .3rem .6rem; }
+
+#map { height: 70vh; width: 100%; border: 4px solid var(--navy); border-radius: 14px; box-shadow: 0 6px 18px rgba(20, 33, 61, .25); }
+.credits { margin-top: .8rem; font-size: .8rem; color: var(--muted); }
+
+.wx-card { min-width: 210px; font-family: "Roboto", Arial, sans-serif; }
+.wx-head { display: flex; align-items: center; gap: .4rem; }
+.wx-head img { width: 56px; height: 56px; background: var(--navy); border-radius: 50%; }
+.wx-name { margin: 0; font-size: 1.05rem; font-weight: 700; color: var(--navy); }
+.wx-temp { font-size: 1.8rem; font-weight: 700; }
+.wx-desc { margin: 0 0 .4rem; text-transform: capitalize; color: var(--muted); }
+.wx-list { margin: 0 0 .6rem; padding: 0; list-style: none; font-size: .9rem; }
+.wx-actions { display: flex; gap: .4rem; flex-wrap: wrap; }
+.share-btn, .save-btn { font: inherit; font-size: .85rem; padding: .35rem .8rem; border-radius: 8px; border: 2px solid var(--accent-dark); background: var(--accent); color: #fff; cursor: pointer; }
+.save-btn { background: #fff; color: var(--accent-dark); }
+.wx-note { font-size: .8rem; color: var(--muted); margin: .4rem 0 0; min-height: 1em; }
+
+@media (max-width: 600px) { .search-form button { flex: 1 1 100%; } }
