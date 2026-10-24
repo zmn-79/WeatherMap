@@ -1,4 +1,4 @@
-// Application flow: resolve location -> weather -> map (phases 1-5).
+
 // Used by both the text search and map clicks.
 let searchId = 0; // guards against out-of-order results
 let busy = false; // map clicks are ignored while a lookup runs (Nominatim: max 1 request/second)
@@ -10,8 +10,8 @@ async function lookup(resolveLocation, keepZoom) {
   WeatherMapView.clearMarker(); // never leave old weather beside a new lookup
   UI.setLoading(true);
   try {
-    const loc = await resolveLocation();             // Phase 2 (forward or reverse geocoding)
-    const wx = await fetchWeather(loc.lat, loc.lon); // Phase 3 (only runs with valid coordinates)
+    const loc = await resolveLocation();             
+    const wx = await fetchWeather(loc.lat, loc.lon); 
     if (id !== searchId) return;
     loc.shortName = wx.city || loc.name.split(',')[0].trim();
     const popup = UI.buildPopup(loc, wx, () => UI.addFavorite(loc.shortName));

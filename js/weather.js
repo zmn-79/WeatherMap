@@ -1,4 +1,4 @@
-// OpenWeatherMap Current Weather API (Phase 3).
+
 function getApiKey() {
   let key = (window.WEATHERMAP_CONFIG && window.WEATHERMAP_CONFIG.apiKey) || '';
   if (!key || key.startsWith('YOUR_')) {

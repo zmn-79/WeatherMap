@@ -1,4 +1,4 @@
-// Leaflet map setup and marker management (Phases 1 and 4).
+
 const WeatherMapView = (() => {
   const START = { lat: 15.5007, lon: 32.5599, zoom: 6 };
   let map = null;

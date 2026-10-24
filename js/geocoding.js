@@ -1,4 +1,4 @@
-// Nominatim geocoding (Phase 2). One request per user submit only - no autocomplete.
+
 class AppError extends Error {
   constructor(message) { super(message); this.name = 'AppError'; }
 }
